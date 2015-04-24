@@ -1,0 +1,83 @@
+# i3 config v1.0
+#
+# Maintainer: Jorden "McHearty" Gabrys <McHearty@gmail.com>
+# i3-gaps-next-git
+
+# Font
+set $ft xft:orp-medium:pixelsize=12:antialias=true:hinting=true
+font $ft
+
+# Look
+
+for_window [class="^.*"] border pixel 0
+gaps inner 42
+gaps outer 6
+
+set $w1 Web
+set $w2 Reddit
+set $w3 Chat
+set $w4 Game
+set $w5 Misc 1
+set $w6 Misc 2
+set $w7 Misc 3
+set $w8 Misc 4
+set $w9 Settings
+set $w10 Steam
+
+# Colors
+
+set $fg 		#f0ead6
+set $bg 		#292e37
+set $black 		#343434
+set $red		#ff8c69
+set $green		#00a86b
+set $yellow		#ff4500
+set $blue		#3284bf
+set $magenta    	#b03060
+set $cyan		#ccccff
+set $white		#e3dac9
+
+#class                    border  backgr  text  split
+client.focused            
+client.focused_inactive   
+client.unfocused          
+client.urgent             
+client.background         
+
+# Applications
+
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --term="urxvt"
+
+# Keybinds
+
+set $mod Mod4
+
+bindsym $mod+shift+c reload
+bindsym $mod+shift+r restart
+
+bindsym $mod+1 workspace $w1
+bindsym $mod+2 workspace $w2
+bindsym $mod+3 workspace $w3
+bindsym $mod+4 workspace $w4
+bindsym $mod+5 workspace $w5
+bindsym $mod+6 workspace $w6
+bindsym $mod+7 workspace $w7
+bindsym $mod+8 workspace $w8
+bindsym $mod+9 workspace $w9
+bindsym $mod+0 workspace $w10
+
+bindsym $mod+Shift+1 move container to workspace $w1
+bindsym $mod+Shift+2 move container to workspace $w2
+bindsym $mod+Shift+3 move container to workspace $w3
+bindsym $mod+Shift+4 move container to workspace $w4
+bindsym $mod+Shift+5 move container to workspace $w5
+bindsym $mod+Shift+6 move container to workspace $w6
+bindsym $mod+Shift+7 move container to workspace $w7
+bindsym $mod+Shift+8 move container to workspace $w8
+bindsym $mod+Shift+9 move container to workspace $w9
+bindsym $mod+Shift+0 move container to workspace $w10
+
+# Bar
+bar {
+    i3bar_command
+}
